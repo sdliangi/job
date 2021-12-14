@@ -22,6 +22,7 @@ public class IndexAdminController {
     @GetMapping
     public ReturnT index(@RequestParam(required = false, defaultValue = "0") int projectId) {
         Map<String, Object> map = xxlJobService.dashboardInfo(projectId);
+        //sss
         return new ReturnT(map);
     }
 
