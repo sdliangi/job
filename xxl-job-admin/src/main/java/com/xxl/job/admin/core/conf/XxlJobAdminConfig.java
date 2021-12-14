@@ -5,7 +5,9 @@ import com.xxl.job.admin.core.scheduler.XxlJobScheduler;
 import com.xxl.job.admin.dao.*;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -69,6 +71,8 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
     @Resource
     private RestTemplate restTemplate;
     private int projectId;
+    @Autowired
+    StringRedisTemplate redisTemplate;
 
     public static XxlJobAdminConfig getAdminConfig() {
         return adminConfig;
@@ -187,4 +191,7 @@ public class XxlJobAdminConfig implements InitializingBean, DisposableBean {
         return jobAlarmer;
     }
 
+    public StringRedisTemplate getRedisTemplate() {
+        return redisTemplate;
+    }
 }
