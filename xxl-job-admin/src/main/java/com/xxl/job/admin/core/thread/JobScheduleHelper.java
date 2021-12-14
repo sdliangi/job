@@ -64,7 +64,7 @@ public class JobScheduleHelper {
                 // pre-read count: treadpool-size * trigger-qps (each trigger cost 50ms, qps = 1000/50 = 20)
                 int preReadCount = (XxlJobAdminConfig.getAdminConfig().getTriggerPoolFastMax() + XxlJobAdminConfig.getAdminConfig().getTriggerPoolSlowMax()) * 20;
                 //TODO 改造使用redis做分布式锁
-                //test
+                //test java---eee
                 while (!scheduleThreadToStop) {
 
                     // Scan Job 扫描任务
