@@ -65,6 +65,7 @@ public class JobScheduleHelper {
                 int preReadCount = (XxlJobAdminConfig.getAdminConfig().getTriggerPoolFastMax() + XxlJobAdminConfig.getAdminConfig().getTriggerPoolSlowMax()) * 20;
                 //TODO 改造使用redis做分布式锁
                 //test
+                //master
                 while (!scheduleThreadToStop) {
 
                     // Scan Job 扫描任务
